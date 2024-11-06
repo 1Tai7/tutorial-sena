@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos de Programación en JavaScript | SENA</title>
+    <link rel="stylesheet" href="./index.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+    </style>
+</head>
+
+<body>
+    <section>
+        <header>
+            <h1>Fundamentos de Programación en JavaScript | SENA
+            </h1>
+            <img src="./assets/logo-sena-naranja-png-2022.png" alt="logo-sena-naranja">
+
+        </header>
+        <aside>
+            <ul>
+                <li id="variables">Variables</li>
+                <li id="funciones">Funciones</li>
+                <li id="condicionales">Condicionales</li>
+                <li id="eventos">Eventos</li>
+                <li id="bucles">Bucles</li>
+            </ul>
+        </aside>
+        <main>
+            <div id="variables_parrafo">
+                <h2>Variables</h2>
+                <p> En JavaScript, las variables son contenedores que almacenan datos o valores, y se definen con las
+                    palabras clave var,let y const. La diferencia entre ellas radica en su alcance y si pueden
+                    reasignarse o no.
+                </p>
+                <ul>
+                    <li>var: Declaración de variables que permite reasignación y tiene alcance global o de función (La
+                        palabra clave se utilizó en todo el código JavaScript desde 1995 hasta 2015.).</li>
+                    <li>let: Permite reasignación, pero tiene un alcance de bloque ({}), lo que la hace más segura en
+                        muchos
+                        casos.</li>
+                    <li>const: Declara constantes, cuyo valor no puede cambiar una vez asignado, y también tiene alcance
+                        de
+                        bloque.</li>
+                </ul>
+                <pre><code class="language-javascript">
+     // Ejemplo de var
+     var nombre = "Juan";
+     nombre = "Carlos"; // Reasignación permitida
+     console.log(nombre); // Carlos
+
+     // Ejemplo de let
+     let edad = 25;
+     edad = 30; // Reasignación permitida
+     console.log(edad); // 30
+
+     // Ejemplo de const
+     const ciudad = "Bogotá";
+     // ciudad = "Cali"; // Error: No se puede reasignar una constante
+     console.log(ciudad); // Bogotá
+                 </code></pre>
+            </div>
+            <div id="funciones_parrafo">
+                <h2>Funciones</h2>
+                <p>
+                    En JavaScript, las funciones son bloques de código que realizan una tarea específica y pueden ser
+                    reutilizadas. Se
+                    pueden definir de varias formas y se ejecutan al ser llamadas por su nombre. Las funciones ayudan a
+                    organizar y
+                    reutilizar el código de manera eficiente.
+                </p>
+                <h3>Tipos de Funciones</h3>
+                <ul>
+                    <li><strong>1. Función Declarada:</strong> Se define con la palabra clave "function" y puede
+                        llamarse en cualquier
+                        lugar del código.
+                        <pre><code class="language-javascript">
+     function helloWorld() {
+       console.log("Hello, World!");
+     }
+                    </code></pre>
+                    </li>
+                    <li><strong>2. Función Expresada: </strong>Se almacena en una variable y solo se puede llamar
+                        después de su declaración.
+                        <pre><code class="language-javascript">
+     const despedir = function(nombre) {
+       return `Adiós, ${nombre}!`;
+     };
+     console.log(despedir("Juan")); // "Adiós, Juan!"
+                    </code></pre>
+                    </li>
+                    <li><strong>3. Función Flecha: </strong>Introducida en ES6, tiene una sintaxis más corta y no crea
+                        su propio contexto this.
+                        <pre><code class="language-javascript">
+     const sumar = (a, b) => a + b;
+     console.log(sumar(3, 5)); // 8              
+                    </code></pre>
+                    </li>
+                </ul>
+            </div>
+            <div id="condicionales_parrafo">
+                <h2>Condicionales</h2>
+                <p>En JavaScript, las condicionales se usan para ejecutar diferentes bloques de código según si una
+                    condición es verdadera
+                    o falsa. Las estructuras condicionales más comunes son if...else, else if y el operador ternario.
+                </p>
+                <h3>Tipos de Condicionales</h3>
+                <ul>
+                    <li><strong>1. if...else:</strong>Ejecuta un bloque de código si una condición es verdadera; de lo
+                        contrario, ejecuta otro bloque opcional
+                        (else).
+                        <pre><code class="language-javascript">
+     let edad = 18;
+     if (edad >= 18) {
+       console.log("Eres mayor de edad.");
+     } else {
+       console.log("Eres menor de edad.");
+     }
+     // Salida: Eres mayor de edad.
+                     </code></pre>
+                    </li>
+                    <li><strong>2. else if: </strong>Permite agregar múltiples condiciones adicionales.
+                        <pre><code class="language-javascript">
+     let hora = 15;
+     if (hora < 12) { 
+       console.log("Buenos días"); 
+     } else if (hora < 18) { 
+       console.log("Buenas tardes"); 
+     } else {
+       console.log("Buenas noches"); 
+     } // Salida: Buenas tardes
+                    </code></pre>
+                    </li>
+                    <li><strong>3. Operador Ternario: </strong>Es una forma simplificada de if...else en una sola línea.
+                        <pre><code class="language-javascript">
+     let esAdulto = edad >= 18 ? "Sí, es adulto" : "No, es menor";
+      console.log(esAdulto);
+     // Salida: Sí, es adulto
+                    </code></pre>
+                    </li>
+                </ul>
+            </div>
+            <div id="eventos_parrafo">
+                <h2>Eventos</h2>
+                <p>
+                    En JavaScript, los eventos son acciones que ocurren en el navegador, como un clic de usuario, el
+                    envío de un formulario
+                    o la carga de una página. Puedes usar eventos para hacer que el sitio sea interactivo y responda a
+                    las acciones del usuario. Los eventos permiten que JavaScript reaccione a las interacciones del
+                    usuario, mejorando la interactividad en la página
+                    web. Se pueden gestionar con addEventListener para cualquier elemento HTML.
+                </p>
+                <h3>Agunos Tipos de Eventos</h3>
+                <ul>
+                    <li>
+                        <strong>1. click: </strong>Se dispara cuando el usuario hace clic en un elemento.
+                        <pre><code class="language-javascript">
+     const boton = document.getElementById("miBoton");
+     boton.addEventListener("click", () => {
+       console.log("¡Botón clickeado!");
+     });
+                        </code></pre>
+                    </li>
+                    <li>
+                        <strong>2. mouseover: </strong>Se activa cuando el usuario pasa el ratón sobre un elemento.
+                        <pre><code class="language-javascript">
+     const imagen = document.getElementById("miImagen");
+     imagen.addEventListener("mouseover", () => {
+       console.log("El ratón está sobre la imagen");
+     });
+                         </code></pre>
+                    </li>
+                    <li>
+                        <strong>1. load: </strong>Se dispara cuando la página web se ha cargado completamente.
+                        <pre><code class="language-javascript">
+     window.addEventListener("load", () => {
+       console.log("La página ha cargado completamente.");
+     });
+                        </code></pre>
+                    </li>
+                </ul>
+            </div>
+            <div id="bucles_parrafo">
+                <h2>Bucles</h2>
+                <p>En JavaScript, los bucles permiten ejecutar un bloque de código repetidamente mientras se cumpla una
+                    condición. Son
+                    útiles para iterar sobre arrays, objetos o realizar tareas repetitivas. Los bucles más comunes en
+                    JavaScript son for,
+                    while y do...while.</p>
+                <h3>Tipos de Bucles</h3>
+                <ul>
+                    <li>
+                        <strong>1.for: </strong>Se usa cuando se sabe cuántas veces se quiere ejecutar el código.
+                        <pre><code class="language-javascript">
+     for (let i = 0; i < 5; i++) { 
+       console.log(i); // Imprime los números del 0 al 4 
+     }
+                        </code></pre>
+                    </li>
+                    <li>
+                        <strong>2.while: </strong>Se ejecuta mientras se cumpla una condición. No siempre se conoce
+                        cuántas veces se repetirá.
+                        <pre><code class="language-javascript">
+     let i = 0;
+     while (i < 5) { 
+        console.log(i); // Imprime los números del 0 al 4 i++; 
+     }
+                        </code></pre>
+                    </li>
+                    <li>
+                        <strong>2.do...while: </strong>Similar al while, pero garantiza que el bloque de código se
+                        ejecute al menos una vez.
+                        <pre><code class="language-javascript">
+     let i = 0;
+     do {
+       console.log(i); // Imprime los números del 0 al 4
+       i++;
+     } while (i < 5);
+                        </code></pre>
+                    </li>
+                </ul>
+            </div>
+        </main>
+        <footer>Aprendiz: <a href="https://github.com/1Tai7">Ilce Garcia</a></footer>
+    </section>
+</body>
+<script src="./index.js"></script>
+
+</html>
